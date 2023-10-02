@@ -1,5 +1,7 @@
 import { Component  } from '@angular/core';
 import     { FormGroup , FormControl ,Validators } from "@angular/forms"
+import { UserserviceService } from 'src/app/services/userservice.service';
+import { user } from 'src/app/types/user.types';
 import Swal from "sweetalert2"
 
 @Component({
@@ -8,6 +10,8 @@ import Swal from "sweetalert2"
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent    {
+
+constructor(private service:UserserviceService){}
 
 
 UserForm =  new FormGroup({
@@ -29,10 +33,17 @@ Swal.fire({
 })
 return
 }else{
+  const data = this.UserForm.value
+  const datas:user  = {
+    name: data.name || '', 
+    email: data.email || '', 
+    password: data.password || '', 
+    confirm_password: data.confirm_password || '', 
+  };
+
+this.service.userRegister(datas)
 
 
-
-  
 }
 
 

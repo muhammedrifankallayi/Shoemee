@@ -1,0 +1,11 @@
+.banner-btn button{
+    width: 200px;
+    height: 80px;
+}
+
+@media (max-width: 600px) {
+    .banner-btn button {
+      width: 150px; /* Half the width */
+      height: 60px; /* Half the height */
+    }
+  }

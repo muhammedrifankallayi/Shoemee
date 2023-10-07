@@ -6,9 +6,16 @@ import {ReactiveFormsModule ,FormsModule}  from "@angular/forms";
 import { HomeComponent } from './home/home.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component'
 import { CommonModule } from "@angular/common";
-import {MatButtonModule} from "@angular/material/button"
+import {MatButtonModule} from "@angular/material/button";
+import { ProductsComponent } from './products/products.component'
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {Observable} from 'rxjs';
 
-
+import {NgFor, AsyncPipe} from '@angular/common';
+import { ChatListComponent } from './chat-list/chat-list.component';
+import { ChatPageComponent } from './chat-page/chat-page.component';
 
 @NgModule({
     declarations:[
@@ -16,7 +23,10 @@ import {MatButtonModule} from "@angular/material/button"
     LoginComponent,
       RegisterComponent,
       HomeComponent,
-      NavBarComponent
+      NavBarComponent,
+      ProductsComponent,
+      ChatListComponent,
+      ChatPageComponent
     
   ],
     imports:[
@@ -24,9 +34,14 @@ UserroutingModule,
 ReactiveFormsModule,
 FormsModule,
 CommonModule,
+NgFor,
+AsyncPipe,
 
 // material modules
-MatButtonModule
+MatButtonModule,
+MatAutocompleteModule,
+MatInputModule,
+MatFormFieldModule
 
     ]
 })
